@@ -4,6 +4,7 @@ function initForm(){
 }
 
 function removeAllError(){
+	console.log(document.getElementsByClassName);	
 	Array.from(document.getElementsByClassName("error")).forEach(e=>remove(e));
 }
 
