@@ -7,10 +7,18 @@ alert('No!!!!!! You clicked me');
 
 var img = document.getElementById('img')
 img.addEventListener('mouseover', function(event) {
-alert('Ah!');
+	img.src = "./chien.jpg";
+	img.name = "chien";
 });
+
+img.addEventListener('mouseout', function(event) {
+	img.src = "./chat.jpg";
+	img.name = "chat";
+});
+
 
 var btn1 = document.getElementById('btn1')
 btn1.addEventListener('click', function(event) {
 document.body.style.backgroundColor = "red";
+btn1.style.backgroundColor = "blue";
 });
