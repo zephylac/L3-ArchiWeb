@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+
+			<table>
+				<form name="form" action="./done.html" onsubmit="return checkForm()" method="post">
+				<tr id="gender">
+					<td>Sexe:</td>
+					<td>
+						<input type="radio" name="gender" value="male"> Homme
+						<input type="radio" name="gender" value="female"> Femme
+						<input type="radio" name="gender" value="other"> Autre
+					</td>
+				</tr>
+
+				<tr id="lastname">
+					<td>Nom:</td>
+					<td>
+						<input type="text" name="lastname">
+					</td>
+				</tr>
+
+				<tr id="firstname">
+
+					<td>Prenom:</td>
+					<td>
+						<input type="text" name="firstname">
+					</td>
+				</tr>
+
+				<tr id="password">
+					<td>
+						Mot de passe:
+					</td>
+					<td>
+						<input type="password" name="password">
+					</td>
+				</tr>
+
+				<tr id="country">
+					<td>
+						Pays:
+					</td>
+					<td>
+						<select name="country" default="none">
+							<!-- <option disabled selected value></option> -->
+							<option value="england">England</option>
+							<option value="germany">Deutschland</option>
+							<option value="france">France</option>
+							<option value="usa">USA</option>
+						</select>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<input type="submit" value="M'inscrire">
+					</td>
+					<td>
+						<button type="button" onclick="initForm()"> Réinitialiser le formulaire </button>
+					</td>
+				</tr>
+		</form>
+	</body>
+	<script type="text/javascript" src="./script.js"></script>
+</html>
