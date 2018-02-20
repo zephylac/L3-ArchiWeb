@@ -9,3 +9,8 @@ var img = document.getElementById('img')
 img.addEventListener('mouseover', function(event) {
 alert('Ah!');
 });
+
+var btn1 = document.getElementById('btn1')
+btn1.addEventListener('click', function(event) {
+document.body.style.backgroundColor = "red";
+});

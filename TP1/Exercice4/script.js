@@ -4,7 +4,6 @@ function initForm(){
 }
 
 function removeAllError(){
-	console.log(document.getElementsByClassName);	
 	Array.from(document.getElementsByClassName("error")).forEach(e=>remove(e));
 }
 
@@ -28,7 +27,6 @@ function displayError(id, msg){
 function checkForm(){
 
 	var body = document.body;
-	var tab = document.getElementsByClassName("table");
 	var ret = true;
 
 	var gender = document.forms["form"]["gender"].value;
