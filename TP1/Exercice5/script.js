@@ -2,26 +2,20 @@ var nbClicks = 0;
 
 function createButton(t){
 	var body = document.body;
+	var container = document.getElementsByClassName("container")
 	var row;
 
 	t.forEach(function(elem,i){
-		if(i % 4 == 0){
-			row = document.createElement("div")
-			row.className = "row";
-			body.appendChild(row);
-		}
 
-		var col = document.createElement("div")
-		col.className = "column"
-		row.appendChild(col)
 		var img = document.createElement("img");
+		img.className = "square rounded rounded";
 		img.src="./Images/default.png";
 		img.addEventListener("click", function(){
 			nbClicks++;
 			show(this,elem)
 		});
 
-		col.appendChild(img);
+		container[0].appendChild(img);
 	});
 }
 
@@ -47,34 +41,49 @@ function retrieveShowedImage(){
 		return Array.from(document.getElementsByClassName("show"));
 }
 
-function playAudio() {
-	var audio = document.getElementById("ah");
+function playAudio(str) {
+	var audio = document.getElementById(str);
 	audio.play();
 }
 
 
 function show(img,i){
 	img.src="./Images/"+ i +".jpg";
-	img.className = "show";
+	img.className = "square rounded show";
 
 	if(nbClicks == 2){
 		nbClicks = 0;
 		var imgs = retrieveShowedImage();
 		if(imgs[0].src === imgs[1].src){
 			imgs.forEach(function(element){
-				element.className = "ok";
-				playAudio();
+				element.className = "square rounded ok";
+				if(document.getElementsByClassName("ok").length == 16){
+					playAudio("fin");
+				}
+				else {
+					playAudio("ah");
+				}
 			});
 		}
 		else{
 			imgs.forEach(function(element){
 				setTimeout(function(elements){
 					element.src="./Images/default.png";
-					element.className = "";
+					element.className = "square rounded";
 				},1000);
 			});
 		}
 	}
+}
+
+var btn = document.getElementById('btn')
+btn.addEventListener('click', function(event) {
+	removeAllImage();
+	createButton(shuffle());
+});
+
+function removeAllImage(){
+	Array.from(document.getElementsByClassName("square rounded")).forEach(e=>e.parentNode.removeChild(e));
 }
 
 

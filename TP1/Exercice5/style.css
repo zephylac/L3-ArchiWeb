@@ -1,11 +1,10 @@
-.column {
-	vertical-align: middle;
-	text-align:center;
-	float: left;
-	width: 25%;
-}
-
-img {
-  max-width:100%;
-  height:auto;
+.square {
+    float:left;
+    position: relative;
+    width: 19%;
+    padding-bottom : 0%; /* = width for a 1:1 aspect ratio */
+    margin:1%;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:contain; /* you change this to "contain" if you don't want the images to be cropped */
 }
